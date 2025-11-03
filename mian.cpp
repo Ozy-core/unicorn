@@ -26,11 +26,7 @@ class Unicorn
 
     ~Unicorn()
     {
-        auto it = find(uniName.begin(), uniName.end(), name);
-        if ( it != uniName.end() )
-        {
-            uniName.erase(it);
-        }
+        uniName.erase(remove(uniName.begin(), uniName.end(), name), uniName.end());
         cout << "Bye bye Unicorn: " << name << endl;
     }
 
